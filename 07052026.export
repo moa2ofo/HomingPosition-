@@ -2556,7 +2556,7 @@ Remanent memory: 64kB (default), extendable</Single>
         <Array Name="EmbeddedTypeGuids" Type="System.Guid">
           <Single Type="System.Guid">a9ed5b7e-75c5-4651-af16-d2c27e98cb94</Single>
         </Array>
-        <Single Name="Timestamp" Type="long">639148029921602540</Single>
+        <Single Name="Timestamp" Type="long">639148072604291330</Single>
       </Single>
       <Single Name="Object" Type="{ffbfa93a-b94d-45fc-a329-229860183b1d}" Method="IArchivable">
         <Single Name="Interface" Type="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" Method="IArchivable">
@@ -2580,7 +2580,7 @@ VAR_GLOBAL
 	re_offset_input_angle : REAL := 0;
 	ArrayCounter : UINT := 0;
 	
-    ElacArrayHoming : ARRAY[0..0] OF HomeStruct := [
+    ElacArrayHoming : ARRAY[0..1] OF HomeStruct := [
         (
             FsSdoSetUp_u := 0,
             SlaveAddress := 1001,
@@ -2591,14 +2591,29 @@ VAR_GLOBAL
 			OffesetInnerAngle_r := 0,
 			HomeOffsetDone := FALSE,
 			FeedConstant_w := 7000,
-			GearRatio_sub1_w := 2,
-			GearRatio_sub2_w := 2,
+			GearRatio_sub1_w := 1,
+			GearRatio_sub2_w := 1,
+			FeedConstant_r := 0,
+			GearRatio_sub1_r := 0,
+			GearRatio_sub2_r := 0
+        ),
+        (
+            FsSdoSetUp_u := 0,
+            SlaveAddress := 1002,
+			WorkingMode := 0, 
+            FsHoming := 0,
+            OuterAngle := 700000,
+            OffesetInnerAngle_w := 700000,
+			OffesetInnerAngle_r := 0,
+			HomeOffsetDone := FALSE,
+			FeedConstant_w := 7000,
+			GearRatio_sub1_w := 1,
+			GearRatio_sub2_w := 1,
 			FeedConstant_r := 0,
 			GearRatio_sub1_r := 0,
 			GearRatio_sub2_r := 0
         )
     ];
-	ElacIdAddress : UINT := 0;
 
 END_VAR</Single>
             <Single Name="LineInfoPersistence" Type="string">2b120134-c941-43df-b32b-4f2ec9123b4f_Decl_LineIds</Single>
@@ -3299,7 +3314,7 @@ END_VAR	</Single>
           <Single Type="System.Guid">a9ed5b7e-75c5-4651-af16-d2c27e98cb94</Single>
           <Single Type="System.Guid">3b83b776-fb25-43b8-99f2-3c507c9143fc</Single>
         </Array>
-        <Single Name="Timestamp" Type="long">639148032932841709</Single>
+        <Single Name="Timestamp" Type="long">639148080277271310</Single>
       </Single>
       <Single Name="Object" Type="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" Method="IArchivable">
         <Single Name="SpecialFunc" Type="{0db3d7bb-cde0-4416-9a7b-ce49a0124323}">None</Single>
@@ -3308,7 +3323,10 @@ END_VAR	</Single>
             <Single Name="TextBlobForSerialisation" Type="string">fbECATMasterSetBusState.Execute     := FALSE;
 fbECATMasterSetBusState.MasterName  := ADR(strMasterName);
 fbECATMasterGetBusState.MasterName := ADR(strMasterName);
-ElacIdAddress := 0;
+
+
+
+
 
 
 fbECATMasterGetBusState();
@@ -3323,7 +3341,8 @@ fbECATMasterGetBusState();
 //   eActBusState := fbECATMasterGetBusState.ActBusState;
 // END_IF
 
-IF  ElacArrayHoming[ArrayCounter].FsHoming = FROM_PREOP_OP_HOME_DONE THEN
+IF  ElacArrayHoming[0].FsHoming = FROM_PREOP_OP_HOME_DONE
+AND ElacArrayHoming[1].FsHoming = FROM_PREOP_OP_HOME_DONE THEN
 	fbECATMasterSetBusState.Execute := TRUE;
 	fbECATMasterSetBusState.NewBusState := IL_ECAT_STATE.ECAT_STATE_OP;
 END_IF
@@ -3447,12 +3466,12 @@ IF fbECATMasterGetBusState.ActBusState = IL_ECAT_STATE.ECAT_STATE_PREOP THEN
 	END_IF
 	
 	IF ElacArrayHoming[ArrayCounter].FsSdoSetUp_u = WRITE_OFFSET 
-		AND ElacArrayHoming[ArrayCounter].OffesetInnerAngle_w = ElacArrayHoming[ArrayCounter].OffesetInnerAngle_r THEN
+		AND ElacArrayHoming[ArrayCounter].OffesetInnerAngle_w = ElacArrayHoming[ArrayCounter].OffesetInnerAngle_r  THEN
 		ElacArrayHoming[ArrayCounter].FsHoming := HOMING_DONE;
 	END_IF
 	
 	IF ElacArrayHoming[ArrayCounter].FsSdoSetUp_u = HOMING_MODE AND ElacArrayHoming[ArrayCounter].WorkingMode = HOMING_MODE_6061 THEN 
-		ElacArrayHoming[0].FsSdoSetUp_u := FEED_CONSTANT;		
+		ElacArrayHoming[ArrayCounter].FsSdoSetUp_u := FEED_CONSTANT;		
 		fbECATCoeWriteSdo.Execute      := FALSE;
 		fbECATCoeReadSdo.Execute      := FALSE;
 		fbECATMasterSetBusState.Execute := FALSE;
@@ -3463,6 +3482,7 @@ IF fbECATMasterGetBusState.ActBusState = IL_ECAT_STATE.ECAT_STATE_PREOP THEN
 		fbECATCoeWriteSdo.Execute      := FALSE;
 		fbECATCoeReadSdo.Execute      := FALSE;
 		fbECATMasterSetBusState.Execute := FALSE;
+		ArrayCounter := ArrayCounter +1;
 	END_IF
 	
 	IF ElacArrayHoming[ArrayCounter].FsSdoSetUp_u = FEED_CONSTANT AND 
@@ -3522,6 +3542,12 @@ IF fbECATMasterGetBusState.ActBusState = IL_ECAT_STATE.ECAT_STATE_PREOP THEN
 	END_IF
 END_IF
 
+// IF ArrayCounter &lt; 1 THEN 
+// 	ArrayCounter := ArrayCounter +1;
+// ELSE
+// 	ArrayCounter := 0;
+// END_IF
+
 IF  FALSE = fbECATMasterSetBusState.Done THEN
 	fbECATMasterGetBusState.Execute := NOT fbECATMasterGetBusState.Execute;
 END_IF
@@ -3565,7 +3591,7 @@ END_VAR
             <Single Name="LineInfoPersistence" Type="string">426cf649-f9c3-487a-80c1-73c695816adf_Decl_LineIds</Single>
           </Single>
         </Single>
-        <Single Name="UniqueIdGenerator" Type="string">513</Single>
+        <Single Name="UniqueIdGenerator" Type="string">535</Single>
         <Single Name="POULevel" Type="{8e575c5b-1d37-49c6-941b-5c0ec7874787}">Standard</Single>
         <List Name="ChildObjectGuids" Type="System.Collections.ArrayList" />
         <Single Name="AddAttributeSubsequent" Type="bool">False</Single>
