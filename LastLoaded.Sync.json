@@ -1,0 +1,56 @@
+{
+  "IsSynced": false,
+  "SyncMode": 0,
+  "InSyncWithRuntime": false,
+  "ApplicationType": "plc",
+  "Configuration": "appdata",
+  "Solution": "DefaultSolution",
+  "ControllerGuid": "677dd78b-aefb-4705-9b32-2dfe791f4b56",
+  "LastChange": 639147701921893680,
+  "MachineName": "OFO-C-00E18",
+  "UserName": "MOA2OFO",
+  "ProjectCompleteFilename": "C:\\Users\\MOA2OFO\\Downloads\\07052026\\07052026.project",
+  "CompilerVersion": {
+    "Major": 3,
+    "Minor": 5,
+    "Build": 20,
+    "Revision": 60,
+    "MajorRevision": 0,
+    "MinorRevision": 60
+  },
+  "OwnVersion": {
+    "Major": 1,
+    "Minor": 2,
+    "Build": 0,
+    "Revision": 0,
+    "MajorRevision": 0,
+    "MinorRevision": 0
+  },
+  "ProductAdditionalFolder": "Default",
+  "ProductProfileName": "ctrlX PLC 3.6.3",
+  "ProductId": "ctrlx-plc-engineering",
+  "ProductVersion": "3.6.3",
+  "ProductVersionText": "3.6.3",
+  "SyncModeSave": false,
+  "SyncModeDownload": false,
+  "SyncModeAsk": false,
+  "SyncAfterBootApplication": false,
+  "SyncOnOpen": false,
+  "UserMetaData": {
+    "OFO-C-00E65:DET2OFO": {
+      "MachineName": "OFO-C-00E65",
+      "UserName": "DET2OFO",
+      "ProjectCompleteFilename": "C:\\Users\\DET2OFO\\Documents\\My ctrlX\\07052026.project"
+    },
+    "OFO-C-00E18:MOA2OFO": {
+      "MachineName": "OFO-C-00E18",
+      "UserName": "MOA2OFO",
+      "ProjectCompleteFilename": "C:\\Users\\MOA2OFO\\Downloads\\07052026\\07052026.project"
+    }
+  },
+  "CompileinfoChecksum": null,
+  "SyncDescription": false,
+  "DeviceId": "1001 0080",
+  "DeviceVersion": "3.6.3.0",
+  "UseIoHierachy": true
+}
