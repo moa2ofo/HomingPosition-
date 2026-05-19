@@ -2556,7 +2556,7 @@ Remanent memory: 64kB (default), extendable</Single>
         <Array Name="EmbeddedTypeGuids" Type="System.Guid">
           <Single Type="System.Guid">a9ed5b7e-75c5-4651-af16-d2c27e98cb94</Single>
         </Array>
-        <Single Name="Timestamp" Type="long">639148072604291330</Single>
+        <Single Name="Timestamp" Type="long">639148084417504919</Single>
       </Single>
       <Single Name="Object" Type="{ffbfa93a-b94d-45fc-a329-229860183b1d}" Method="IArchivable">
         <Single Name="Interface" Type="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" Method="IArchivable">
@@ -2595,7 +2595,8 @@ VAR_GLOBAL
 			GearRatio_sub2_w := 1,
 			FeedConstant_r := 0,
 			GearRatio_sub1_r := 0,
-			GearRatio_sub2_r := 0
+			GearRatio_sub2_r := 0,
+			GearRatioConstant := -100
         ),
         (
             FsSdoSetUp_u := 0,
@@ -2611,7 +2612,8 @@ VAR_GLOBAL
 			GearRatio_sub2_w := 1,
 			FeedConstant_r := 0,
 			GearRatio_sub1_r := 0,
-			GearRatio_sub2_r := 0
+			GearRatio_sub2_r := 0,
+			GearRatioConstant := -100
         )
     ];
 
@@ -3314,7 +3316,7 @@ END_VAR	</Single>
           <Single Type="System.Guid">a9ed5b7e-75c5-4651-af16-d2c27e98cb94</Single>
           <Single Type="System.Guid">3b83b776-fb25-43b8-99f2-3c507c9143fc</Single>
         </Array>
-        <Single Name="Timestamp" Type="long">639148080277271310</Single>
+        <Single Name="Timestamp" Type="long">639148087457485168</Single>
       </Single>
       <Single Name="Object" Type="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" Method="IArchivable">
         <Single Name="SpecialFunc" Type="{0db3d7bb-cde0-4416-9a7b-ce49a0124323}">None</Single>
@@ -3482,7 +3484,9 @@ IF fbECATMasterGetBusState.ActBusState = IL_ECAT_STATE.ECAT_STATE_PREOP THEN
 		fbECATCoeWriteSdo.Execute      := FALSE;
 		fbECATCoeReadSdo.Execute      := FALSE;
 		fbECATMasterSetBusState.Execute := FALSE;
-		ArrayCounter := ArrayCounter +1;
+		IF ArrayCounter &lt; 1 THEN
+			ArrayCounter := ArrayCounter +1;
+		END_IF
 	END_IF
 	
 	IF ElacArrayHoming[ArrayCounter].FsSdoSetUp_u = FEED_CONSTANT AND 
@@ -3511,7 +3515,7 @@ IF fbECATMasterGetBusState.ActBusState = IL_ECAT_STATE.ECAT_STATE_PREOP THEN
 
 	
 	IF ElacArrayHoming[ArrayCounter].FsSdoSetUp_u = METH_AND_ANGLE AND  ElacArrayHoming[ArrayCounter].OuterAngle &lt;&gt; 700000 THEN 
-		ElacArrayHoming[ArrayCounter].OffesetInnerAngle_w := TO_DINT(((ElacArrayHoming[ArrayCounter].OuterAngle*FEED_COSTANT*GEAR_RATIO)/(ROUND_ANGLE)));
+		ElacArrayHoming[ArrayCounter].OffesetInnerAngle_w := TO_DINT(((ElacArrayHoming[ArrayCounter].OuterAngle*TO_REAL(ElacArrayHoming[ArrayCounter].FeedConstant_w)*ElacArrayHoming[ArrayCounter].GearRatioConstant)/(ROUND_ANGLE)));
 		ElacArrayHoming[ArrayCounter].FsSdoSetUp_u := WRITE_OFFSET;
 		fbECATCoeWriteSdo.Execute      := FALSE;
 		fbECATCoeReadSdo.Execute      := FALSE;
@@ -3591,7 +3595,7 @@ END_VAR
             <Single Name="LineInfoPersistence" Type="string">426cf649-f9c3-487a-80c1-73c695816adf_Decl_LineIds</Single>
           </Single>
         </Single>
-        <Single Name="UniqueIdGenerator" Type="string">535</Single>
+        <Single Name="UniqueIdGenerator" Type="string">538</Single>
         <Single Name="POULevel" Type="{8e575c5b-1d37-49c6-941b-5c0ec7874787}">Standard</Single>
         <List Name="ChildObjectGuids" Type="System.Collections.ArrayList" />
         <Single Name="AddAttributeSubsequent" Type="bool">False</Single>
@@ -41841,7 +41845,7 @@ END_VAR</Single>
         <Array Name="EmbeddedTypeGuids" Type="System.Guid">
           <Single Type="System.Guid">a9ed5b7e-75c5-4651-af16-d2c27e98cb94</Single>
         </Array>
-        <Single Name="Timestamp" Type="long">639148029801641508</Single>
+        <Single Name="Timestamp" Type="long">639148087097586224</Single>
       </Single>
       <Single Name="Object" Type="{2db5746d-d284-4425-9f7f-2663a34b0ebc}" Method="IArchivable">
         <Single Name="Interface" Type="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" Method="IArchivable">
@@ -41862,12 +41866,13 @@ STRUCT
 	FeedConstant_r : ULINT;
 	GearRatio_sub1_r : ULINT;
 	GearRatio_sub2_r : ULINT;
+	GearRatioConstant : REAL;
 END_STRUCT
 END_TYPE</Single>
             <Single Name="LineInfoPersistence" Type="string">be83d381-1c7b-416b-8dce-b4c858b2ff19_Decl_LineIds</Single>
           </Single>
         </Single>
-        <Single Name="UniqueIdGenerator" Type="string">22</Single>
+        <Single Name="UniqueIdGenerator" Type="string">24</Single>
       </Single>
       <Single Name="ParentSVNodeGuid" Type="System.Guid">c4c3114b-de9d-406b-8c05-722eaeb6ac86</Single>
       <Array Name="Path" Type="string">
