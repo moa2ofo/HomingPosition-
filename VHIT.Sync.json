@@ -1,15 +1,15 @@
 {
   "IsSynced": false,
   "SyncMode": 0,
-  "InSyncWithRuntime": false,
+  "InSyncWithRuntime": true,
   "ApplicationType": "plc",
   "Configuration": "appdata",
   "Solution": "DefaultSolution",
-  "ControllerGuid": "677dd78b-aefb-4705-9b32-2dfe791f4b56",
-  "LastChange": 639148012431918791,
+  "ControllerGuid": "4765acac-a4ba-43ff-9860-73079f404701",
+  "LastChange": 639148772241037963,
   "MachineName": "OFO-C-00E18",
   "UserName": "MOA2OFO",
-  "ProjectCompleteFilename": "C:\\Users\\MOA2OFO\\Downloads\\07052026\\07052026.project",
+  "ProjectCompleteFilename": "C:\\Users\\MOA2OFO\\Downloads\\07052026\\VHIT.project",
   "CompilerVersion": {
     "Major": 3,
     "Minor": 5,
@@ -37,15 +37,10 @@
   "SyncAfterBootApplication": false,
   "SyncOnOpen": false,
   "UserMetaData": {
-    "OFO-C-00E65:DET2OFO": {
-      "MachineName": "OFO-C-00E65",
-      "UserName": "DET2OFO",
-      "ProjectCompleteFilename": "C:\\Users\\DET2OFO\\Documents\\My ctrlX\\07052026.project"
-    },
     "OFO-C-00E18:MOA2OFO": {
       "MachineName": "OFO-C-00E18",
       "UserName": "MOA2OFO",
-      "ProjectCompleteFilename": "C:\\Users\\MOA2OFO\\Downloads\\07052026\\07052026.project"
+      "ProjectCompleteFilename": "C:\\Users\\MOA2OFO\\Downloads\\07052026\\VHIT.project"
     }
   },
   "CompileinfoChecksum": null,
