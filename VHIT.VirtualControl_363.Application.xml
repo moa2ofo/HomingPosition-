@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="4.5.2.0" runtimeid="3.5.20.40" libversion="4.5.0.0" compiler="3.5.20.60" lmm="3.5.20.60" profile="ctrlX PLC 3.6.3+" settings="SupportOPCUA, IncludeExecutables, XmlIncludeComments, XmlIncludeExecutables, LayoutCalculator=CompatibilityClientSideLayoutCalculator" />
+    <ProjectInfo name="VHIT" devicename="VirtualControl_363" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_LREAL" size="8" swapsize="8" typeclass="LReal" iecname="LREAL" />
+    <TypeSimple name="T_REAL" size="4" swapsize="4" typeclass="Real" iecname="REAL" />
+    <TypeSimple name="T_STRING" size="81" swapsize="0" typeclass="String" iecname="STRING" />
+    <TypeSimple name="T_STRING_25_" size="26" swapsize="0" typeclass="String" iecname="STRING(25)" />
+    <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
+    <TypeSimple name="T_USINT" size="1" swapsize="1" typeclass="USInt" iecname="USINT" />
+    <TypeArray name="T_ARRAY__1__10__OF_UINT" size="20" nativesize="20" typeclass="Array" iecname="ARRAY [1..10] OF UINT" basetype="T_UINT">
+      <ArrayDim minrange="1" maxrange="10" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__16__OF_LREAL" size="128" nativesize="128" typeclass="Array" iecname="ARRAY [1..16] OF LREAL" basetype="T_LREAL">
+      <ArrayDim minrange="1" maxrange="16" />
+    </TypeArray>
+    <TypeUserDef name="T_EN_AxisConfig_FBK" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="EN_AxisConfig_FBK" basetype="T_INT">
+      <UserDefElement type="T_EN_AxisConfig_FBK" iecname="enIdleAxis" enumvalue="0" />
+      <UserDefElement type="T_EN_AxisConfig_FBK" iecname="enPositioningAxis" enumvalue="1">
+        <Comment> robot positioning axis</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_AxisConfig_FBK" iecname="enOrientationAxis" enumvalue="2">
+        <Comment> robot orientation axis</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_AxisConfig_FBK" iecname="enBeltAxis" enumvalue="3">
+        <Comment> robot belt axis</Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_EN_AxisScaling_FBK" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="EN_AxisScaling_FBK" basetype="T_INT">
+      <UserDefElement type="T_EN_AxisScaling_FBK" iecname="enIdleAxis" enumvalue="0" />
+      <UserDefElement type="T_EN_AxisScaling_FBK" iecname="enLinearAxis" enumvalue="1">
+        <Comment> robot linear axis</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_AxisScaling_FBK" iecname="enRotatoryAxis" enumvalue="2">
+        <Comment> robot rotatory axis</Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_EN_AxisType_FBK" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="EN_AxisType_FBK" basetype="T_INT">
+      <UserDefElement type="T_EN_AxisType_FBK" iecname="enIdleAxis" enumvalue="0" />
+      <UserDefElement type="T_EN_AxisType_FBK" iecname="enRealAxis" enumvalue="1">
+        <Comment> robot real axis</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_AxisType_FBK" iecname="enVirtualAxis" enumvalue="2">
+        <Comment> robot virtual axis</Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_EN_JogCoordinateSel" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="EN_JogCoordinateSel" basetype="T_INT">
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enIdle" enumvalue="0" />
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord1" enumvalue="1">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord2" enumvalue="2">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord3" enumvalue="3">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord4" enumvalue="4">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord5" enumvalue="5">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord6" enumvalue="6">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord7" enumvalue="7">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord8" enumvalue="8">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord9" enumvalue="9">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord10" enumvalue="10">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord11" enumvalue="11">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord12" enumvalue="12">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord13" enumvalue="13">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord14" enumvalue="14">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord15" enumvalue="15">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_JogCoordinateSel" iecname="enJogCoord16" enumvalue="16">
+        <Comment> select jog coordinate 1</Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_EN_KIN_PLANE" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="EN_KIN_PLANE" basetype="T_INT">
+      <UserDefElement type="T_EN_KIN_PLANE" iecname="enIdle" enumvalue="0" />
+      <UserDefElement type="T_EN_KIN_PLANE" iecname="enXYZ" enumvalue="1">
+        <Comment> XYZ plane </Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_KIN_PLANE" iecname="enXY" enumvalue="2">
+        <Comment> XY plane </Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_KIN_PLANE" iecname="enXZ" enumvalue="3">
+        <Comment> XZ plane </Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_KIN_PLANE" iecname="enYZ" enumvalue="4">
+        <Comment> YZ plane </Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_EN_MotionType" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="EN_MotionType" basetype="T_INT">
+      <UserDefElement type="T_EN_MotionType" iecname="MoveLinearAbs" enumvalue="0">
+        <Comment> Motion law type: Move Linear Absolute</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_MotionType" iecname="MoveLinearRel" enumvalue="1">
+        <Comment> Motion law type: Move Linear Relative</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_MotionType" iecname="MoveCircularAbs" enumvalue="2">
+        <Comment> Motion law type: Move Circular Absolute</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_MotionType" iecname="MoveCircularRel" enumvalue="3">
+        <Comment> Motion law type: Move Circular Relative</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_MotionType" iecname="MoveDirectAbs" enumvalue="4">
+        <Comment> Motion law type: Move Direct Absolute</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_MotionType" iecname="MoveDirectRel" enumvalue="5">
+        <Comment> Motion law type: Move Direct Relative</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_MotionType" iecname="MoveLinearAbsCXA" enumvalue="6">
+        <Comment> Motion law type: Move Linear Absolute CXA Motion</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_MotionType" iecname="MoveCircularAbsCXA" enumvalue="7">
+        <Comment> Motion law type: Move Circular Absolute CXA Motion</Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_EN_RECIPE_COMMANDS" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="EN_RECIPE_COMMANDS" basetype="T_INT">
+      <UserDefElement type="T_EN_RECIPE_COMMANDS" iecname="enREAD_RECIPE" enumvalue="0">
+        <Comment> Read Recipe Values from CF card</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_RECIPE_COMMANDS" iecname="enWRITE_RECIPE" enumvalue="1">
+        <Comment> Write Recipe Values in the CF Card</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_RECIPE_COMMANDS" iecname="enCOPY_RECIPE" enumvalue="2">
+        <Comment> Copy Recipe Values</Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_EN_SlopeType" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="EN_SlopeType" basetype="T_INT">
+      <UserDefElement type="T_EN_SlopeType" iecname="BLOCK_SLOPE" enumvalue="0">
+        <Comment> Motion law slope: Block Slope </Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_SlopeType" iecname="CONT_SLOPE" enumvalue="1">
+        <Comment> Motion law slope: Continuous Slope spline</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_SlopeType" iecname="POLY_SLOPE" enumvalue="2">
+        <Comment> Motion law slope: Polynomial c2-steady  spline</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_EN_SlopeType" iecname="PATH_SMOOTH" enumvalue="3">
+        <Comment> Motion law slope: Command KinPathSmoot : KinContour + ContouosSope * Polynoniam C2 Slope</Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_MC_BUFFER_MODE" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="MC_BUFFER_MODE" basetype="T_INT">
+      <UserDefElement type="T_MC_BUFFER_MODE" iecname="mcAborting" enumvalue="0">
+        <Comment> Start FB immediately (default mode for Axis, not support for Axes Group)</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_MC_BUFFER_MODE" iecname="mcBuffered" enumvalue="1">
+        <Comment> Start FB after current motion has finished (defualt mode for Axes Group)</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_MC_BUFFER_MODE" iecname="mcBlending" enumvalue="2">
+        <Comment> The current and the next motion FBs are blended, so the axes group will not stop between the motions (not support for single axis)</Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_MC_COORD_SYSTEM" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="MC_COORD_SYSTEM" basetype="T_INT">
+      <UserDefElement type="T_MC_COORD_SYSTEM" iecname="MCS" enumvalue="0">
+        <Comment> machine coordinate system</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_MC_COORD_SYSTEM" iecname="WCS" enumvalue="1">
+        <Comment> world coordinate system</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_MC_COORD_SYSTEM" iecname="PCS" enumvalue="2">
+        <Comment> product coordinate system</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_MC_COORD_SYSTEM" iecname="ACS" enumvalue="3">
+        <Comment> axis coordinate system</Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_ML_CoordSys" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="ML_CoordSys" basetype="T_INT">
+      <UserDefElement type="T_ML_CoordSys" iecname="UNDEF" enumvalue="0">
+        <Comment> error or undefined</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_ML_CoordSys" iecname="PCS" enumvalue="1">
+        <Comment> target COS is PCS (product coordinate system)</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_ML_CoordSys" iecname="WCS" enumvalue="2">
+        <Comment> target COS is WCS (world coordinate system)</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_ML_CoordSys" iecname="MCS" enumvalue="3">
+        <Comment> target COS is MCS (machine coordinate system)</Comment>
+      </UserDefElement>
+      <UserDefElement type="T_ML_CoordSys" iecname="ACS" enumvalue="4">
+        <Comment> target COS is ACS (axes coordinate system)</Comment>
+      </UserDefElement>
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_BeltTrackingStatus" size="13" nativesize="13" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_BeltTrackingStatus">
+      <UserDefElement iecname="DESYNCHRONIZED" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="WAIT_FOR_START_PLANE_PASSED" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="SYNCHRONIZING" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="SYNCHRONIZED" type="T_BOOL" byteoffset="3" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="DECOUPLING" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="DECOUPELD" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="RESYNC_FROM_DECOUPLING" type="T_BOOL" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="RESYNC_FROM_DECOUPLED" type="T_BOOL" byteoffset="7" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="DESYNCHRONIZING" type="T_BOOL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="ERR_DESYNC" type="T_BOOL" byteoffset="9" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="ERR_RETRACT" type="T_BOOL" byteoffset="10" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="ERR_RETRACT_AND_DESYNC_SIM" type="T_BOOL" byteoffset="11" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="ERR_DESYNCHRONIZED" type="T_BOOL" byteoffset="12" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_RobotAxis_CMD" size="16" nativesize="16" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_RobotAxis_CMD">
+      <UserDefElement iecname="bHomeAxisAbsEncoder" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rHomeAbsEncoderRefDistance" type="T_LREAL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeArray name="T_ARRAY__1__100__OF_ARRAY__1__16__OF_LREAL" size="12800" nativesize="12800" typeclass="Array" iecname="ARRAY [1..100] OF ARRAY [1..16] OF LREAL" basetype="T_ARRAY__1__16__OF_LREAL">
+      <ArrayDim minrange="1" maxrange="100" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__10__OF_ARRAY__1__16__OF_LREAL" size="1280" nativesize="1280" typeclass="Array" iecname="ARRAY [1..10] OF ARRAY [1..16] OF LREAL" basetype="T_ARRAY__1__16__OF_LREAL">
+      <ArrayDim minrange="1" maxrange="10" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__16__OF_ST_RobotAxis_CMD" size="256" nativesize="256" typeclass="Array" iecname="ARRAY [1..16] OF ST_RobotAxis_CMD" basetype="T_ST_RobotAxis_CMD">
+      <ArrayDim minrange="1" maxrange="16" />
+    </TypeArray>
+    <TypeUserDef name="T_ST_AxisConfig_FBK_CtrlX" size="90" nativesize="90" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_AxisConfig_FBK_CtrlX">
+      <UserDefElement iecname="enAxisConfigType" type="T_EN_AxisConfig_FBK" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enAxisType" type="T_EN_AxisType_FBK" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enAxisScaling" type="T_EN_AxisScaling_FBK" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uiAxisNumber" type="T_UINT" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="strAxisName" type="T_STRING" byteoffset="8" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_KIN_PATH_STATUS" size="18" nativesize="18" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_KIN_PATH_STATUS">
+      <UserDefElement iecname="bBlockSlopeActive" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bContSlopeActive" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bPolySlopeActive" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bPathSmoothSlopeActive" type="T_BOOL" byteoffset="3" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bKinContourActive" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="stBeltTrackingStatus" type="T_ST_BeltTrackingStatus" byteoffset="5" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_MoveCircularData" size="4" nativesize="4" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_MoveCircularData">
+      <UserDefElement iecname="enKinPlane" type="T_EN_KIN_PLANE" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bCW_CCW" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_PathPlanner_CMD" size="52" nativesize="52" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_PathPlanner_CMD">
+      <UserDefElement iecname="bRunPathPlanner" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bHoldCycle" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="iStartBlock" type="T_UINT" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bDisableKinContour" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bSetAlwaysKinContour" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bInTouchProbeStop" type="T_BOOL" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rTouchProbeStopDec" type="T_REAL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rTouchProbeStopJerk" type="T_REAL" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="iStepNo" type="T_UINT" byteoffset="16" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bSetPathParAll" type="T_BOOL" byteoffset="18" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bSetPathDynParAll" type="T_BOOL" byteoffset="19" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rSetSpeedOverride" type="T_REAL" byteoffset="20" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rPathAccAll" type="T_REAL" byteoffset="24" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rPathBlendAll" type="T_REAL" byteoffset="28" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enCoordSysAll" type="T_ML_CoordSys" byteoffset="32" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rPathJerkAll" type="T_REAL" byteoffset="36" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rPathVelAll" type="T_REAL" byteoffset="40" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enSetModeAll" type="T_MC_BUFFER_MODE" byteoffset="44" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enSlopeAll" type="T_EN_SlopeType" byteoffset="46" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bInsertEmptyBlock" type="T_BOOL" byteoffset="48" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bDeleteBlock" type="T_BOOL" byteoffset="49" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bCopyBlock" type="T_BOOL" byteoffset="50" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bMoveBlock" type="T_BOOL" byteoffset="51" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_RobotJogCoordinate" size="24" nativesize="24" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_RobotJogCoordinate">
+      <UserDefElement iecname="enJogCoord" type="T_EN_JogCoordinateSel" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bJogPos" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bJogNeg" type="T_BOOL" byteoffset="3" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rJogVel" type="T_REAL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rJogAcc" type="T_REAL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rJogJerk" type="T_REAL" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rJogOverride" type="T_REAL" byteoffset="16" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bCutJogOverrideBy100" type="T_BOOL" byteoffset="20" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_RobotJogJoint" size="28" nativesize="28" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_RobotJogJoint">
+      <UserDefElement iecname="bEnableJogJoint" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enJogCoord" type="T_EN_JogCoordinateSel" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bJogPos" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bJogNeg" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rJogVel" type="T_REAL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rJogAcc" type="T_REAL" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rJogJerk" type="T_REAL" byteoffset="16" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rJogOverride" type="T_REAL" byteoffset="20" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bCutJogOverrideBy100" type="T_BOOL" byteoffset="24" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_RobotPointsSet" size="344" nativesize="344" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_RobotPointsSet">
+      <UserDefElement iecname="strPointName" type="T_STRING_25_" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bEnableCondition" type="T_BOOL" byteoffset="26" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="usiJumpBefore" type="T_UINT" byteoffset="28" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="usiJumpAfter" type="T_UINT" byteoffset="30" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enMotionType" type="T_EN_MotionType" byteoffset="32" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enCoordSys" type="T_ML_CoordSys" byteoffset="34" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enSlopeType" type="T_EN_SlopeType" byteoffset="36" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enSetMode" type="T_MC_BUFFER_MODE" byteoffset="38" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="arPos" type="T_ARRAY__1__16__OF_LREAL" byteoffset="40" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="arAuxPos" type="T_ARRAY__1__16__OF_LREAL" byteoffset="168" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rVel" type="T_LREAL" byteoffset="296" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rAcc" type="T_LREAL" byteoffset="304" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rJerk" type="T_LREAL" byteoffset="312" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rRadius" type="T_LREAL" byteoffset="320" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rStartHeight" type="T_REAL" byteoffset="328" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rMaxHeight" type="T_REAL" byteoffset="332" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rEndHeight" type="T_REAL" byteoffset="336" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bMoveToDone" type="T_BOOL" byteoffset="340" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeArray name="T_ARRAY__1__1024__OF_ST_MoveCircularData" size="4096" nativesize="4096" typeclass="Array" iecname="ARRAY [1..1024] OF ST_MoveCircularData" basetype="T_ST_MoveCircularData">
+      <ArrayDim minrange="1" maxrange="1024" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__1024__OF_ST_RobotPointsSet" size="352256" nativesize="352256" typeclass="Array" iecname="ARRAY [1..1024] OF ST_RobotPointsSet" basetype="T_ST_RobotPointsSet">
+      <ArrayDim minrange="1" maxrange="1024" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__10__OF_ST_RobotPointsSet" size="3440" nativesize="3440" typeclass="Array" iecname="ARRAY [1..10] OF ST_RobotPointsSet" basetype="T_ST_RobotPointsSet">
+      <ArrayDim minrange="1" maxrange="10" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__16__OF_ST_AxisConfig_FBK_CtrlX" size="1440" nativesize="1440" typeclass="Array" iecname="ARRAY [1..16] OF ST_AxisConfig_FBK_CtrlX" basetype="T_ST_AxisConfig_FBK_CtrlX">
+      <ArrayDim minrange="1" maxrange="16" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__2__OF_ST_KIN_PATH_STATUS" size="36" nativesize="36" typeclass="Array" iecname="ARRAY [1..2] OF ST_KIN_PATH_STATUS" basetype="T_ST_KIN_PATH_STATUS">
+      <ArrayDim minrange="1" maxrange="2" />
+    </TypeArray>
+    <TypeUserDef name="T_ST_Robot_CMD" size="328" nativesize="328" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_Robot_CMD">
+      <UserDefElement iecname="bEnable" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bMainContactor" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bEmergencyStop" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bPowerON" type="T_BOOL" byteoffset="3" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bClearError" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enCoordSystemFbk" type="T_MC_COORD_SYSTEM" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rEmergencyStopDec" type="T_REAL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rEmergencyStopJerk" type="T_REAL" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="stRobotAxisCmd" type="T_ARRAY__1__16__OF_ST_RobotAxis_CMD" byteoffset="16" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="stJogCoordinate" type="T_ST_RobotJogCoordinate" byteoffset="272" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="stJogJoint" type="T_ST_RobotJogJoint" byteoffset="296" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bDebugLastProgPoints" type="T_BOOL" byteoffset="324" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_TeachInPoints" size="528" nativesize="528" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_TeachInPoints">
+      <UserDefElement iecname="bExTeachIn" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bExTeachInAuxCirc" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="stRobotPointTeachIn" type="T_ST_RobotPointsSet" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="usiSetPointNo" type="T_UINT" byteoffset="352" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="usiTeachInPoint" type="T_UINT" byteoffset="354" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bTeachInDone" type="T_BOOL" byteoffset="356" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bExRecipeCommand" type="T_BOOL" byteoffset="357" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="enRecipeCommand" type="T_EN_RECIPE_COMMANDS" byteoffset="358" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="strRecipeFile" type="T_STRING" byteoffset="360" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="strCopyRecipeFile" type="T_STRING" byteoffset="441" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bRecipeCommandDone" type="T_BOOL" byteoffset="522" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeArray name="T_ARRAY__1__2__OF_ST_Robot_CMD" size="656" nativesize="656" typeclass="Array" iecname="ARRAY [1..2] OF ST_Robot_CMD" basetype="T_ST_Robot_CMD">
+      <ArrayDim minrange="1" maxrange="2" />
+    </TypeArray>
+    <TypeUserDef name="T_ST_PathPlanner_FBK" size="3560" nativesize="3560" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_PathPlanner_FBK">
+      <UserDefElement iecname="bBlockInBuffer" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bMoveToDone" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bPathCycleActive" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bHoldCycleActive" type="T_BOOL" byteoffset="3" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bPathMoveToDone" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="usiBufferedBlock" type="T_UINT" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="arBufferSequence" type="T_ARRAY__1__10__OF_UINT" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="arBufferBlockMem" type="T_ARRAY__1__10__OF_ST_RobotPointsSet" byteoffset="32" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="usiBufferedBlockMem" type="T_UINT" byteoffset="3472" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="strStatusMessage" type="T_STRING" byteoffset="3474" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_RobotPathPlanner" size="356936" nativesize="356936" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_RobotPathPlanner">
+      <UserDefElement iecname="stPathPlannerCmd" type="T_ST_PathPlanner_CMD" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="stRobotPoints" type="T_ARRAY__1__1024__OF_ST_RobotPointsSet" byteoffset="56" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="stMoveCircAddData" type="T_ARRAY__1__1024__OF_ST_MoveCircularData" byteoffset="352312" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="stTeachInPoints" type="T_ST_TeachInPoints" byteoffset="356408" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ST_Robot_FBK" size="15816" nativesize="15816" typeclass="Userdef" pouclass="STRUCTURE" iecname="ST_Robot_FBK">
+      <UserDefElement iecname="bReadConfigDone" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bAxisPowerOk" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bAxisHomed" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bAxisError" type="T_BOOL" byteoffset="3" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bAxisGrouped" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bAxisMoving" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bAxisStandstill" type="T_BOOL" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bKinError" type="T_BOOL" byteoffset="7" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bKinMoving" type="T_BOOL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bKinJogMoving" type="T_BOOL" byteoffset="9" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bKinStandstill" type="T_BOOL" byteoffset="10" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bKinStandby" type="T_BOOL" byteoffset="11" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bKinStopping" type="T_BOOL" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="bKinDisabled" type="T_BOOL" byteoffset="13" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="usiRobotAxisNumber" type="T_USINT" byteoffset="14" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="arAxisConfigFBK" type="T_ARRAY__1__16__OF_ST_AxisConfig_FBK_CtrlX" byteoffset="16" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rPathVelocity" type="T_REAL" byteoffset="1456" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rPathAcceleration" type="T_REAL" byteoffset="1460" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="rPathJerk" type="T_REAL" byteoffset="1464" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="arPathCoordinates" type="T_ARRAY__1__16__OF_LREAL" byteoffset="1472" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="arJointCoordinates" type="T_ARRAY__1__16__OF_LREAL" byteoffset="1600" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="arPreparedPoints" type="T_ARRAY__1__10__OF_ARRAY__1__16__OF_LREAL" byteoffset="1728" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="arExecutedPoints" type="T_ARRAY__1__100__OF_ARRAY__1__16__OF_LREAL" byteoffset="3008" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="iLastPreparedPoint" type="T_INT" byteoffset="15808" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="iLastExecutedPoint" type="T_INT" byteoffset="15810" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeArray name="T_ARRAY__1__2__OF_ST_PathPlanner_FBK" size="7120" nativesize="7120" typeclass="Array" iecname="ARRAY [1..2] OF ST_PathPlanner_FBK" basetype="T_ST_PathPlanner_FBK">
+      <ArrayDim minrange="1" maxrange="2" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__2__OF_ST_RobotPathPlanner" size="713872" nativesize="713872" typeclass="Array" iecname="ARRAY [1..2] OF ST_RobotPathPlanner" basetype="T_ST_RobotPathPlanner">
+      <ArrayDim minrange="1" maxrange="2" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__2__OF_ST_Robot_FBK" size="31632" nativesize="31632" typeclass="Array" iecname="ARRAY [1..2] OF ST_Robot_FBK" basetype="T_ST_Robot_FBK">
+      <ArrayDim minrange="1" maxrange="2" />
+    </TypeArray>
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="Global_Var_RobotBase">
+        <Node name="stRobotCmd" type="T_ARRAY__1__2__OF_ST_Robot_CMD" access="ReadWrite">
+          <Comment>#############################################################################################
+  #############################################################################################
+
+   General Header
+  ---------------------------------------------------------------------------------------------
+   Shortdescription       :  
+   Version                : 1.0.0.&lt;br&gt;
+   Name                   : GT DCIT/STS&lt;br&gt;
+   Date                   : 2024-10-25&lt;br&gt;
+   Company                : Bosch Rexroth  S.p.A. Electric Drives and Controls&lt;br&gt;
+   Target                 : CtrlX Core V.2.6.4 &lt;br&gt;
+   Functional description :  
+   Handling specials      : 
+							
+	
+								
+  ---------------------------------------------------------------------------------------------
+
+   Additional Header
+  ---------------------------------------------------------------------------------------------
+   Used global variables  : 
+
+   Used Standard Library  : []	
+
+   Used Standard Function Block:	
+      
+   Possible error codes:	
+
+   Last Modified Issues: 
+											
+  -----------------------------------------------------------------------
+
+
+  ---------------------------------------------------------------------------------------------
+
+  #############################################################################################
+  ############################################################################################# </Comment>
+        </Node>
+        <Node name="stRobotFbk" type="T_ARRAY__1__2__OF_ST_Robot_FBK" access="ReadWrite" />
+      </Node>
+      <Node name="Global_Var_RobotPathPlanner">
+        <Comment>#############################################################################################
+  #############################################################################################
+
+   General Header
+  ---------------------------------------------------------------------------------------------
+   Shortdescription       : Global Variable for Robot Management
+   Version                : 1.0.0.&lt;br&gt;
+   Name                   : GT DCIT/STS&lt;br&gt;
+   Date                   : 2024-10-25&lt;br&gt;
+   Company                : Bosch Rexroth  S.p.A. Electric Drives and Controls&lt;br&gt;
+   Target                 : CtrlX Core V.3.6.0 &lt;br&gt;
+   Functional description : 
+   Handling specials      :    -
+   
+   Last modification	  :
+ 
+   Version               : 3.6.1.3 &lt;br&gt;
+   Name                  : GT DCIT/STS&lt;br&gt;
+   Date                  : 2025-06-16&lt;br&gt;
+	  Company               : Bosch Rexroth  S.p.A. Electric Drives and Controls&lt;br&gt;
+   Target                : CtrlX Core V.3.6.0 &lt;br&gt;
+	  Modified POUs			: FB_RobotPathPlannerManagement&lt;br&gt;
+   Description 			: Chage point managament : added global cosstant to magage system buffer max full and max empty to enable to send points  &lt;br&gt;
+													iBufferLimit:INT:=50; 			// Higher Points Buffer Limit&lt;br&gt;
+													iBufferLimitMin: INT := 20;		// Lower Points Buffer Limit&lt;br&gt;
+													iBufferSizeContour : INT :=15 ;  // Buffer size of the kin contour function&lt;br&gt;
+&lt;br&gt;  
+
+ ---------------------------------------------------------------------------------------------
+	
+  ---------------------------------------------------------------------------------------------</Comment>
+        <Node name="stKinPathBlendingStatus" type="T_ARRAY__1__2__OF_ST_KIN_PATH_STATUS" access="ReadWrite" />
+        <Node name="stPathPlannerFbk" type="T_ARRAY__1__2__OF_ST_PathPlanner_FBK" access="ReadWrite" />
+        <Node name="stRobotPathPlanner" type="T_ARRAY__1__2__OF_ST_RobotPathPlanner" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_Robot_Hmi">
+        <Node name="bEnableRobotHmi" type="T_BOOL" access="ReadWrite">
+          <Comment> ########################### Robot HMI Variables #########################################</Comment>
+        </Node>
+        <Node name="iCoordSys" type="T_UINT" access="ReadWrite" />
+        <Node name="idxPoint" type="T_UINT" access="ReadWrite" />
+        <Node name="iMotionType" type="T_UINT" access="ReadWrite" />
+        <Node name="iRecipeCommand" type="T_INT" access="ReadWrite" />
+        <Node name="iSelJogCoord" type="T_INT" access="ReadWrite" />
+        <Node name="iSetMode" type="T_UINT" access="ReadWrite" />
+        <Node name="iSlopeType" type="T_UINT" access="ReadWrite" />
+        <Node name="stPathPlannerFbkHmi" type="T_ST_PathPlanner_FBK" access="ReadWrite" />
+        <Node name="stRobotCmdHmi" type="T_ST_Robot_CMD" access="ReadWrite">
+          <Comment> ########################### Robot Base Structures ########################################</Comment>
+        </Node>
+        <Node name="stRobotFbkHmi" type="T_ST_Robot_FBK" access="ReadWrite" />
+        <Node name="stRobotPathPlannerHmi" type="T_ST_RobotPathPlanner" access="ReadWrite">
+          <Comment> ########################## Robot Path Planner &amp; Recipes Structures ######################</Comment>
+        </Node>
+        <Node name="stRobotPointHmi" type="T_ST_RobotPointsSet" access="ReadWrite" />
+        <Node name="uiRobotNoHmi" type="T_UINT" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
